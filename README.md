@@ -1,36 +1,25 @@
 <img align="left" width="100px" height="100px" src="/assets/seso-eng-logo.png">
 
-# Seso Engineering | Challenge: Log Sorting
+# Seso Engineering | Challenge: Log Sorting by Luiz Carneiro
 
 <br>
 
-## Instructions
+## How to run
 
-We have a number of [**log sources**](https://github.com/sesolabor/glowing-octo-disco/blob/master/lib/log-source.js). Each log source contains N log entries. Each entry is a javascript object with a timestamp and message. We don't know the number of log entries each source contains - however - we do know that the entries within each source are sorted 🕒 **chronologically** 🕒.
+- Make sure you have `node` installed
+- Then, run:
+   ```sh
+   npm install
+   ```
+- You should be good to go! So:
+   ```sh
+   npm start
+   ```
 
-### The Objectives:
+## Considerations
 
-1. **_Drain all of the log sources_** for both the synchronous and asynchronous solutions.
-   - [Synchronous](https://github.com/sesolabor/glowing-octo-disco/blob/31313e303c53cebb96fa02f3aab473dd011e1d16/lib/log-source.js#L37)
-   - [Asynchronous](https://github.com/sesolabor/glowing-octo-disco/blob/31313e303c53cebb96fa02f3aab473dd011e1d16/lib/log-source.js#L45)
-1. Print all of the entries, across all of the sources, in chronological order.
-   - We don't need to store the log entries, just print them to stdout.
-1. Do this _efficiently_. There are time and space complexities afoot!
+Since JS does not have a native `Heap` class implementation, I resourced the library [`heap`](https://www.npmjs.com/package/heap) which seems to be frequently used, so this is the only library that was added to the boilerplate repo.
 
-We expect candidates to spend 1-3 hours on this exercise.
+### Original instructions
 
-**We want to see you flex your CS muscles!!! Use the appropriate data structures to satisfy the time and space complexities inherent to the problem!!!**
-
-## Pointers & Callouts
-
-- We don't know how many logs each source contains. A source could contain millions of entries and be exabytes in size! In other words, reading the entirety of a log source into memory won't work well.
-- Log sources could contain logs from last year, from yesterday, even from 100 years ago. We won't know the timeframe of a log source until we start looking.
-- Consider what would happen when asked to merge 1 million log sources. Where might bottlenecks arise?
-
-There are two parts of the challenge which you'll see when diving into things. You can get started by running `npm start`.
-
-## Submitting
-
-Create a GitHub repo and email your point of contact the link.
-
-If - for whatever reason - you cannot create a GitHub repo for this challenge, it is also acceptable to 'zip' the directory and provide your submission as an email attachment.
+You can find the original instructions [here](Instructions.md).
